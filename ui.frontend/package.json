@@ -17,13 +17,24 @@
     "chokidar": "chokidar -c \"clientlib\" ./dist",
     "aemsyncro": "aemsync -w ../ui.apps/src/main/content",
     "watch": "npm-run-all --parallel start chokidar aemsyncro",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o .storybook/build"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
     "@chromatic-com/storybook": "^3.2.4",
+    "@storybook/addon-a11y": "^8.5.3",
+    "@storybook/addon-controls": "^8.5.3",
+    "@storybook/addon-designs": "^8.1.0",
+    "@storybook/addon-essentials": "^8.5.3",
+    "@storybook/addon-highlight": "^8.5.3",
+    "@storybook/addon-jest": "^8.5.3",
+    "@storybook/addon-measure": "^8.5.3",
+    "@storybook/addon-outline": "^8.5.3",
+    "@storybook/addon-storysource": "^8.5.3",
+    "@storybook/addon-viewport": "^8.5.3",
     "@storybook/addon-webpack5-compiler-babel": "^3.0.5",
     "@storybook/html": "^8.5.3",
     "@storybook/html-webpack5": "^8.5.3",
@@ -66,6 +77,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.26.7",
     "@babel/preset-typescript": "^7.26.0",
+    "dotenv": "^16.4.7",
     "global": "^4.4.0",
     "jquery": "^3.4.1",
     "normalize-scss": "^7.0.1"
