@@ -19,6 +19,6 @@ module.exports = {
     "@whitespace/storybook-addon-html",
     "@storybook/addon-storysource",
     "@storybook/addon-designs",
-    // "@storybook/addon-a11y"
+    "@storybook/addon-a11y"
   ],
 };
