@@ -11,7 +11,7 @@ const config: StorybookConfig = {
     "@whitespace/storybook-addon-html",
     "@storybook/addon-storysource",
     "@storybook/addon-a11y",
-    "@storybook/addon-designs"
+    // "@storybook/addon-designs"
   ],
   framework: {
     name: "@storybook/react-webpack5",
