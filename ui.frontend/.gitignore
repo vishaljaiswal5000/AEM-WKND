@@ -5,3 +5,5 @@ node_modules/
 npm-debug.log
 install.js
 dist/
+
+*storybook.log
