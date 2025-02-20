@@ -1,6 +1,10 @@
 import { document, console } from "global";
 import "../src/main/webpack/site/main.scss";
 import "../.storybook/story-styles.css";
+import { parameters as globalParameters } from '../.storybook/storybook.config';
+
+const figmaLink = "https://www.figma.com/design/2mkPK7zS6hBYgDQNYFIpt2/Join-Now?node-id=1524-7160&t=4SWVoALVwHjfTPf6-4";
+
 
 export default {
   title: "Accordion",
@@ -9,21 +13,7 @@ export default {
 
 export const Default = {
   parameters: {
-    design: [
-      {
-        type: "figspec",
-        url: "https://www.figma.com/design/2mkPK7zS6hBYgDQNYFIpt2/Join-Now?node-id=1524-7160&t=4SWVoALVwHjfTPf6-4",
-        accessToken: process.env.STORYBOOK_FIGMA_ACCESS_TOKEN
-      },
-      {
-        type: "figma",
-        url: "https://www.figma.com/design/2mkPK7zS6hBYgDQNYFIpt2/Join-Now?node-id=1524-7160&t=4SWVoALVwHjfTPf6-4",
-      },
-      {
-        type: "link",
-        url: "https://www.figma.com/design/e8qD1luh7QEE9EaP3DFTvc/Figma-Basics?m=auto&t=H01YX0UcFtVfUIPY-6",
-      },
-    ],
+    design: [...globalParameters(figmaLink)],
   },
 };
 
