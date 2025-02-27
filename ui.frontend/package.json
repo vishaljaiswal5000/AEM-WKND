@@ -18,7 +18,8 @@
     "aemsyncro": "aemsync -w ../ui.apps/src/main/content",
     "watch": "npm-run-all --parallel start chokidar aemsyncro",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic":"npx chromatic --project-token=chpt_cd37c8af46acf9d"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
