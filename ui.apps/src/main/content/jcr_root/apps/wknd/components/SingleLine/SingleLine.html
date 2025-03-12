@@ -1,0 +1,11 @@
+<div class="cmp-singleline" data-cmp-is="singleline">
+    <h2 class="cmp-singleline__title">Hello World Component</h2>
+    <div class="cmp-singleline__item" data-sly-test="${properties.title}">
+        <p class="cmp-singleline__item-label">title property:</p>
+        <pre class="cmp-singleline__item-output" data-cmp-hook-singleline="property">${properties.title}</pre>
+    </div>
+    <div class="cmp-singleline__item" data-sly-use.model="com.adobe.aem.guides.wknd.core.models.SingleLine" data-sly-test="${model.description}">
+        <p class="cmp-singleline__item-label">Model description:</p>
+        <pre class="cmp-singleline__item-output" data-cmp-hook-singleline="model">${model.description}</pre>
+    </div>
+</div>
