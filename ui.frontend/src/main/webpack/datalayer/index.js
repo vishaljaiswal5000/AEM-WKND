@@ -5,8 +5,11 @@ try {
   var digitalData = {};
   window.lists = digitalData;
 
-  $(document).ready(function () {
+  $(document).ready(()=> {
+    // executing on pageload capture
     initiatePageScript(digitalData);
+
+    // Initiating element listeners
     componentsInit(digitalData);
   });
 } catch (error) {
