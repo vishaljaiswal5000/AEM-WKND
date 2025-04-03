@@ -19,10 +19,12 @@ const resolve = {
 module.exports = {
     resolve: resolve,
     entry: {
-        site: SOURCE_ROOT + '/site/main.js'
+        default: SOURCE_ROOT + '/site/main.js',
+        brand1: SOURCE_ROOT + '/brand1/main.js',
+        brand2: SOURCE_ROOT + '/brand2/main.js'
     },
     output: {
-        filename: 'clientlib-site/js/[name].bundle.js',
+        filename: 'clientlib-brand-[name]/site.js',
         path: path.resolve(__dirname, 'dist')
     },
     optimization: {
@@ -99,12 +101,13 @@ module.exports = {
         new ESLintPlugin({
             extensions: ['js', 'ts', 'tsx']
         }),
-        new MiniCssExtractPlugin({
-            filename: 'clientlib-[name]/[name].css'
+        new MiniCssExtractPlugin(
+        {
+            filename: 'clientlib-brand-[name]/site.css'
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site' }
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-brand-default/' }
             ]
         })
     ],
