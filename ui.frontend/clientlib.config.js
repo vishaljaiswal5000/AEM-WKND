@@ -26,7 +26,8 @@ const CLIENTLIB_DIR = path.join(
   'content',
   'jcr_root',
   'apps',
-  'wknd',
+  'aem-sites',
+  'core',
   'clientlibs'
 );
 
@@ -44,25 +45,25 @@ module.exports = {
   libs: [
     {
       ...libsBaseConfig,
-      name: "clientlib-brand-default",
-      categories: ["aem-sites.default"],
+      name: "clientlib-brand-core",
+      categories: ["aem-sites.core"],
       assets: {
         // Copy entrypoint scripts and stylesheets into the respective ClientLib
         // directories
         js: {
-          cwd: "clientlib-brand-default",
+          cwd: "clientlib-brand-core",
           files: ["**/*.js"],
           flatten: false,
         },
         css: {
-          cwd: "clientlib-brand-default",
+          cwd: "clientlib-brand-core",
           files: ["**/*.css"],
           flatten: false,
         },
 
         // Copy all other files into the `resources` ClientLib directory
         resources: {
-          cwd: "clientlib-brand-default",
+          cwd: "clientlib-brand-core",
           files: ["**/*.*"],
           flatten: false,
           ignore: ["**/*.js", "**/*.css"],
@@ -82,7 +83,8 @@ module.exports = {
         "content",
         "jcr_root",
         "apps",
-        "wknd",
+        "aem-sites",
+        'brand1',
         "clientlibs",
         "clientlib-brand-brand1"
       ),
@@ -121,7 +123,8 @@ module.exports = {
         "content",
         "jcr_root",
         "apps",
-        "wknd",
+        "aem-sites",
+        'brand2',
         "clientlibs",
         "clientlib-brand-brand2"
       ),

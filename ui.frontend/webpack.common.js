@@ -19,7 +19,7 @@ const resolve = {
 module.exports = {
     resolve: resolve,
     entry: {
-        default: SOURCE_ROOT + '/site/main.js',
+        core: SOURCE_ROOT + '/site/main.js',
         brand1: SOURCE_ROOT + '/brand1/main.js',
         brand2: SOURCE_ROOT + '/brand2/main.js'
     },
@@ -107,7 +107,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-brand-default/' }
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-brand-core/' }
             ]
         })
     ],
