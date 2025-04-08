@@ -54,7 +54,9 @@ module.exports = merge(common, {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-brand-core/' }
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/core/resources'), to: './clientlib-brand-core/' },
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/brand1/resources'), to: './clientlib-brand-brand1/' },
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/brand2/resources'), to: './clientlib-brand-brand2/' }
             ]
         })
     ]

@@ -19,7 +19,7 @@ const resolve = {
 module.exports = {
     resolve: resolve,
     entry: {
-        core: SOURCE_ROOT + '/site/main.js',
+        core: SOURCE_ROOT + '/core/main.js',
         brand1: SOURCE_ROOT + '/brand1/main.js',
         brand2: SOURCE_ROOT + '/brand2/main.js'
     },
@@ -107,7 +107,9 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-brand-core/' }
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/core/resources'), to: './clientlib-brand-core/' },
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/brand1/resources'), to: './clientlib-brand-brand1/' },
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/brand2/resources'), to: './clientlib-brand-brand2/' },
             ]
         })
     ],
@@ -117,7 +119,7 @@ module.exports = {
         children: false,
         chunkGroups: true,
         chunkOrigins: true,
-        colors: false,
+        colors: true,
         errors: true,
         errorDetails: true,
         env: true,
