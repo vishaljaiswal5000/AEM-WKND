@@ -1,0 +1,68 @@
+@use 'sass:map';
+// Define the color map
+$colors: (
+   'red': (
+      50: #f5dbd9,
+      100: #ebb9b3,
+      200: #e29580,
+      300: #da7368,
+      400: #d35445,
+      500: #d52b1e,
+      600: #d52b1e,
+      700: #b62115,
+      800: #a1120d,
+      900: #210906,
+   ),
+   'cool-grey-4': (
+      50: #f4f4f4,
+      100: #e9e9e9,
+      200: #dedede,
+      300: #d2d3d2,
+      400: #c7c7c7,
+      500: #bcbcbc,
+      600: #b0b0b0,
+      700: #767775,
+      800: #5e5f5e,
+      900: #464746,
+   ),
+   'cool-grey-10': (
+      50: #e4e5e6,
+      100: #cacbcc,
+      200: #b0b1b3,
+      300: #969799,
+      400: #7b7d80,
+      500: #616365,
+      600: #494a4c,
+      700: #242526,
+      800: #313132,
+      900: #242526,
+   ),
+   'neutral': (
+      'white': #ffffff,
+      'black': #1e1e1e,
+   ),
+   'status': (
+      'green': #006b4d,
+      'orange': #e15d00,
+      'red': #da1307,
+      'blue': #18488f,
+   ),
+);
+
+// Function to get color
+@function get-color($color-name, $shade) {
+   $color-map: map.get($colors, $color-name);
+
+   @if not $color-map {
+      @error "Color '#{$color-name}' not found. Available colors: #{map.keys($colors)}";
+   }
+
+   $color: map.get($color-map, $shade);
+
+   @if not $color {
+      @error "Shade '#{$shade}' not found in '#{$color-name}'. Available shades: #{map.keys($color-map)}";
+   }
+
+   @return $color;
+}
+

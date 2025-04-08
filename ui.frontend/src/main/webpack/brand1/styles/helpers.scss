@@ -1,0 +1,36 @@
+/********************************************
+        BASE EM CALC
+********************************************/
+
+@function em($px, $base: 16) {
+   @return calc($px / $base) * 1em;
+}
+
+@function rem($size) {
+   $remSize: calc($size / 16px);
+   @return $remSize * 1rem;
+}
+
+@mixin border($size, $color, $radius: 0, $position: 'all') {
+   border-radius: $radius;
+
+   @if $position == 'all' {
+      border: $size solid $color;
+   }
+
+   @if $position == 'left' {
+      border-left: $size solid $color;
+   }
+
+   @if $position == 'right' {
+      border-right: $size solid $color;
+   }
+
+   @if $position == 'top' {
+      border-top: $size solid $color;
+   }
+
+   @if $position == 'bottom' {
+      border-bottom: $size solid $color;
+   }
+}

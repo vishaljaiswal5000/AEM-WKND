@@ -1,0 +1,79 @@
+@use 'sass:map';
+
+/**
+ * Breakpoint ranges.
+ */
+$breakpoints: (
+  'xs': (
+    'min': 0,
+    'max': 320
+  ),
+  'sm': (
+    'min': 321,
+    'max': 834
+  ),
+  'md': (
+    'min': 835,
+    'max': 1024
+  ),
+  'lg': (
+    'min': 1025,
+    'max': 1440
+  ),
+  'xl': (
+    'min': 1440
+  )
+  
+);
+
+/**
+ * Media queries.
+ * media query strings, including the only screen and prefix.
+ */
+$mq: (
+  'xs': "only screen and (min-width: #{map.get($breakpoints, 'xs', 'min')}px)",
+  'xs-max': "only screen and (max-width: #{map.get($breakpoints, 'xs', 'max')}px)",
+  'sm': "only screen and (min-width: #{map.get($breakpoints, 'sm', 'min')}px)",
+  'sm-max': "only screen and (max-width: #{map.get($breakpoints, 'sm', 'max')}px)",
+  'md': "only screen and (min-width: #{map.get($breakpoints, 'md', 'min')}px)",
+  'md-max': "only screen and (max-width: #{map.get($breakpoints, 'md', 'max')}px)",
+  'lg': "only screen and (min-width: #{map.get($breakpoints, 'lg', 'min')}px)",
+  'lg-max': "only screen and (max-width: #{map.get($breakpoints, 'lg', 'max')}px)",
+  'xl': "only screen and (min-width: #{map.get($breakpoints, 'xl', 'min')}px)"
+);
+
+/**
+ * Returns breakpoint range value.
+ * 
+ * @param {string} $breakpoint - Breakpoint.
+ * @param {string} $minOrMax - "min" or "max" range values.
+ * @example breakpoint("xs", "min") // 320
+ */
+@function breakpoint($breakpoint, $minOrMax) {
+  @return map.get($breakpoints, $breakpoint, $minOrMax);
+}
+
+/**
+ * Returns media query. Sample usage: 
+ * @include mq("lg") {...}
+ * 
+ * @param {string} $breakpoint - Breakpoint.
+ */
+@mixin mq($breakpoint) {
+  @media #{map.get($mq, $breakpoint)} {
+    @content;
+  }
+}
+
+/**
+ * Mixin for applying responsive properties to lists.
+ *
+ * @param {string} $list - List of breakpoint/value pairs.
+ */
+@mixin responsive($list) {
+  @each $breakpoint, $value in $list {
+    @media #{map.get($mq, $breakpoint)} {
+      @content ($value);
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@use 'sass:map';
+
+$spacing: (
+   'default': (
+      'p-4': 0.25rem,       // 4px    
+      'p-8': 0.5rem,        // 8px  
+      'p-16': 1rem,         // 16px  
+      'p-24': 1.5rem,       // 24px    
+      'p-32': 2rem,         // 32px  
+      'p-40': 2.5rem,       // 40px    
+      'p-48': 3rem,         // 48px  
+      'p-56': 3.5rem,       // 56px    
+      'p-64': 4rem,         // 64px  
+      'p-72': 4.5rem,       // 72px    
+      'p-80': 5rem,         // 80px  
+      'p-96': 6rem,         // 96px  
+      'p-112': 7rem,        // 112px  
+      'p-128': 8rem,        // 128px  
+      'p-144': 9rem,        // 144px  
+      'p-160': 10rem,       // 160px    
+      'p-192': 12rem,       // 192px    
+   ),
+   'compact': (
+    'p-compact-2': 0.125rem,  // 2px 
+    'p-compact-4': 0.25rem,   // 4px 
+    'p-compact-8': 0.5rem,    // 8px 
+    'p-compact-10': 0.65rem,  // 10px
+    'p-compact-12': 0.75rem,  // 12px 
+    'p-compact-16': 1rem,     // 16px 
+    'p-compact-20': 1.25rem,  // 20px 
+    'p-compact-24': 1.5rem,   // 24px 
+    'p-compact-28': 1.75rem,  // 28px 
+    'p-compact-32': 2rem,     // 32px 
+    'p-compact-36': 2.25rem,  // 36px 
+    'p-compact-40': 2.5rem,   // 40px 
+    'p-compact-48': 3rem      // 48px 
+   ),
+);
+
+/**
+ * Returns spacer by index.
+ */
+@function get-spacing($spacing-name, $variant) {
+  $spacing-map: map.get($spacing, $spacing-name);
+
+  @if not $spacing-map {
+     @error "spacing '#{$spacing-name}' not found. Available spacings: #{map.keys($spacing)}";
+  }
+
+  $target-spacing: map.get($spacing-map, $variant);
+
+  @if not $target-spacing {
+     @error "variant '#{$variant}' not found in '#{$spacing-name}'. Available variant: #{map.keys($spacing-map)}";
+  }
+
+  @return $target-spacing;
+}

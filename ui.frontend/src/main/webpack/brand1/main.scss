@@ -1,3 +1,10 @@
-@import '../core/main.scss';
+@use '../core/main.scss';
 
-@import './styles/elements.scss';
+@use './styles/elements.scss';
+
+// foundations
+@use './styles/foundations/typography';
+@use './styles/foundations/breakpoints';
+@use './styles/foundations/colors';
+@use './styles/foundations/fonts';
+@use './styles/foundations/spacing';

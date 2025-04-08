@@ -1,0 +1,73 @@
+@use '../foundations/colors';
+
+// Surface/Button/Primary
+$surface-button-primary-default: colors.get-color('red', 500);
+$surface-button-primary-hover: colors.get-color('red', 400);
+$surface-button-primary-active: colors.get-color('red', 700);
+$surface-button-primary-disabled: colors.get-color('cool-grey-10', 50);
+
+// Surface/Button/Secondary
+$surface-button-secondary-default: colors.get-color('red', 500);
+$surface-button-secondary-hover: colors.get-color('red', 400);
+$surface-button-secondary-active: colors.get-color('red', 700);
+$surface-button-secondary-disabled: colors.get-color('cool-grey-4', 800);
+
+// Surface/Button/Link
+$border-button-outlined-default: colors.get-color('red', 500);
+$border-button-outlined-hover: colors.get-color('red', 400);
+$border-button-outlined-active: colors.get-color('red', 700);
+$border-button-outlined-disabled: colors.get-color('cool-grey-4', 800);
+
+// Border/Button/Outlined
+$border-button-outlined-default: colors.get-color('red', 500);
+$border-button-outlined-hover: colors.get-color('red', 400);
+$border-button-outlined-active: colors.get-color('red', 700);
+$border-button-outlined-disabled: colors.get-color('cool-grey-10', 300);
+
+// Border/Form Assets
+$border-form-input: colors.get-color('cool-grey-10', 300);
+$border-form-error: colors.get-color('status', 'red');
+
+// Border/Status
+$border-status-success: colors.get-color('status', 'green');
+$border-status-warning: colors.get-color('status', 'orange');
+$border-status-info: colors.get-color('status', 'blue');
+$border-status-error: colors.get-color('status', 'red');
+$border-status-offer: colors.get-color('red', 500);
+
+// Text/Heading
+$text-heading-primary: colors.get-color('neutral', 'black');
+$text-heading-secondary: colors.get-color('neutral', 'black');
+
+$text-body-primary: colors.get-color('neutral', 'black');
+$text-body-secondary: colors.get-color('neutral', 'black');
+
+// Text/Status
+$text-status-success: colors.get-color('status', 'green');
+$text-status-warning: colors.get-color('status', 'orange');
+$text-status-error: colors.get-color('status', 'red');
+$text-status-info: colors.get-color('status', 'blue');
+
+// Text/Button/Primary
+$text-button-primary-default: colors.get-color('neutral', 'white');
+$text-button-primary-hover-active: colors.get-color('neutral', 'white');
+$text-button-primary-disabled: colors.get-color('cool-grey-10', 300);
+
+// Text/Button/Secondary
+$text-button-secondary-default: colors.get-color('neutral', 'black');
+$text-button-secondary-hover: colors.get-color('red', 500);
+$text-button-secondary-clicked: colors.get-color('red', 600);
+$text-button-secondary-disabled: colors.get-color('cool-grey-10', 300);
+
+// Text/Button/Link
+$text-button-link-default: colors.get-color('red', 500);
+$text-button-link-hover: colors.get-color('red', 400);
+$text-button-link-clicked: colors.get-color('red', 700);
+$text-button-link-disabled: colors.get-color('cool-grey-10', 300);
+
+// Content/Button/Icon/Primary
+$content-button-icon-primary-default-hover-active: colors.get-color(
+   'neutral',
+   'white'
+);
+$content-button-icon-primary-disabled: colors.get-color('cool-grey-10', 300);

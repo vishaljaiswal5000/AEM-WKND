@@ -1,0 +1,159 @@
+@use 'sass:map';
+@use '../helpers.scss';
+
+//Font variable definition
+$base-font-family:
+   'Ubuntu', 'Play', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-font-size: helpers.rem(16px);
+$base-font-height: 1.5;
+$base-font-style: normal;
+
+$font: (
+   'type': (
+      'font-heading-1': (
+         'font-size': 4rem,
+         'line-height': 4.625rem,
+      ),
+      'font-heading-2': (
+         'font-size': 3.5rem,
+         'line-height': 4.125rem,
+      ),
+      'font-heading-3': (
+         'font-size': 3rem,
+         'line-height': 3.625rem,
+      ),
+      'font-heading-4': (
+         'font-size': 2.5rem,
+         'line-height': 3.125rem,
+      ),
+      'font-heading-5': (
+         'font-size': 2rem,
+         'line-height': 2.625rem,
+      ),
+      'font-heading-6': (
+         'font-size': 1.25rem,
+         'line-height': 2.125rem,
+      ),
+      'text-lg': (
+         'font-size': 1.125rem,
+         'line-height': 1.75rem,
+      ),
+      'text-base': (
+         'font-size': 1rem,
+         'line-height': 1.625rem,
+      ),
+      'text-sm': (
+         'font-size': 0.875rem,
+         'line-height': 1.5rem,
+      ),
+      'text-xs': (
+         'font-size': 0.75rem,
+         'line-height': 1.375rem,
+      ),
+      'text-xxs': (
+         'font-size': 0.625rem,
+         'line-height': 1.25rem,
+      ),
+      'textlink-lg': (
+         'font-size': 1.125rem,
+         'line-height': 1.75rem,
+         'text-decoration': underline,
+      ),
+      'textlink-base': (
+         'font-size': 1rem,
+         'line-height': 1.625rem,
+         'text-decoration': underline,
+      ),
+      'textlink-sm': (
+         'font-size': 0.875rem,
+         'line-height': 1.5rem,
+         'text-decoration': underline,
+      ),
+      'textlink-xs': (
+         'font-size': 0.75rem,
+         'line-height': 1.375rem,
+         'text-decoration': underline,
+      ),
+      'textlink-xxs': (
+         'font-size': 0.625rem,
+         'line-height': 1.25rem,
+         'text-decoration': underline,
+      ),
+   ),
+   'weight': (
+      'font-light': (
+         'font-weight': 300,
+      ),
+      'font-normal': (
+         'font-weight': 400,
+      ),
+      'font-medium': (
+         'font-weight': 500,
+      ),
+      'font-bold': (
+         'font-weight': 700,
+      ),
+   ),
+);
+
+@mixin font($type, $weight: 'font-normal') {
+   $font-properties: map.get($font, 'type', $type);
+   $weight-property: map.get($font, 'weight', $weight);
+
+   @if $font-properties {
+      font-size: map.get($font-properties, 'font-size');
+      line-height: map.get($font-properties, 'line-height');
+
+      $decoration: map.get($font-properties, 'text-decoration');
+
+      @if $decoration {
+         text-decoration: $decoration;
+      }
+   } @else {
+      @error "Type `#{$type}` not found in $font map.";
+   }
+
+   @if $weight-property {
+      font-weight: map.get($weight-property, 'font-weight');
+   } @else {
+      @error "Weight `#{$weight}` not found in $font map.";
+   }
+}
+
+@mixin icon-size($size) {
+   font-size: helpers.rem($size);
+}
+
+// ============= Font Classes ==================== //
+
+h1,
+.font-heading-1 {
+   @include font('font-heading-1');
+}
+
+h2,
+.font-heading-2 {
+   @include font('font-heading-2');
+}
+
+h3,
+.font-heading-3 {
+   @include font('font-heading-3');
+}
+
+h4,
+.font-heading-4 {
+   @include font('font-heading-4');
+}
+
+h5,
+.font-heading-5 {
+   @include font('font-heading-5');
+}
+
+h6,
+.font-heading-6 {
+   @include font('font-heading-6');
+}
+
+//Further classes will be added after disucssion with design team
